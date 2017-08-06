@@ -1,0 +1,50 @@
+.page-header {
+    background-color: none !important;
+    margin-top: 1.250em;
+    min-height: 150px;
+    }
+
+.button {
+    background-image: url(../home.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white;
+    padding: 60px 90px;
+    cursor: pointer;
+    float: right;
+    transition: all .5s ease-in-out;
+    border-left:solid 0.125em orange;
+    border-right:solid 0.125em orange;
+    border-top:none;
+    border-bottom:none;
+}
+
+.btn-group {
+    margin-right: 50px;
+    content: "";
+    clear: both;
+}
+
+.button:hover {
+    background-color: orange;
+    background-image: none;
+}
+
+#button4 {
+    border-left: none;
+}
+
+#button1 {
+    border-right: none;
+}
+
+
+.button:hover:before {
+    content: attr(data-active);
+}
+
+
+.text-left {
+    margin: 1.00em
+    text-align: left;
+    }
