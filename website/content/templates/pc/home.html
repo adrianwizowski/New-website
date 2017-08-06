@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+    <head>
+        <title>test</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static '/css/home.css' %}">
+        <link rel="shortcut icon" type="image/png" href="{{STATIC_URL}}/001-home.svg"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $("#button3").click(function() {
+                $.ajax({
+                    url: '/about',
+                    success: function(data) {
+                        $('.refresh').html(data);
+                    }
+                });
+            });
+        });
+    </script>
+    </head>
+    <body>
+        <div class="page-header">
+            <div align="center">
+                 <div class="btn-group">
+                      <form>
+                          <button class="button" type="button" data-active="Contact" id="button1"/>
+                          <button class="button" type="button" data-active="Gallery" id="button2"/>
+                          <button class="button" type="button" data-active="About" id="button3"/>
+                          <button class="button" type="button" data-active="News" id="button4"/>
+                      </form>
+                 </div>
+            </div>
+        </div>
+    <div class="refresh">
+    </div>
+    </body>
+</html>
