@@ -17,6 +17,7 @@
     border-right:solid 0.125em orange;
     border-top:none;
     border-bottom:none;
+    position: relative;
 }
 
 .btn-group {
@@ -41,6 +42,8 @@
 
 .button:hover:before {
     content: attr(data-active);
+    position: absolute;
+    align-content: center;
 }
 
 

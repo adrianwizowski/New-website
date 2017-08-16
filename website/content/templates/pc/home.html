@@ -18,6 +18,14 @@
                     }
                 });
             });
+            $("#button1").click(function() {
+                $.ajax({
+                    url: '/contact',
+                    success: function(data) {
+                        $('.refresh').html(data);
+                    }
+                });
+            });
         });
     </script>
     </head>
@@ -35,6 +43,19 @@
             </div>
         </div>
     <div class="refresh">
+        {% for i in about %}
+        {% if forloop.counter|divisibleby:2 %}
+            <div class="text-right" style="color: white; text-align: right; padding: 1.125em; margin: 1.500em; margin-top: 0.000em; background-color: orange;">
+              <h1>{{ i.title }}</h1>
+              <p>{{ i.text }}</p>
+            </div>
+        {% else %}
+            <div class="text-left" style="color: white; text-align: left; padding: 1.125em; margin: 1.500em; margin-top: 0.000em; background-color: lightblue;">
+              <h1>{{ i.title }}</h1>
+              <p>{{ i.text }}</p>
+            </div>
+        {% endif %}
+    {% endfor %}
     </div>
     </body>
 </html>

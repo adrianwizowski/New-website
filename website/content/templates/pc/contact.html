@@ -1,0 +1,9 @@
+<div id="contact">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="form-actions">
+          <button>Send</button>
+        </div>
+    </form>
+</div>
